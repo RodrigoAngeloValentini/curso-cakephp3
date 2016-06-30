@@ -16,13 +16,15 @@
             <td><?=$user->username?></td>
             <td><?=$user->email?></td>
             <td>
-                <a href="#">Edit</a>
-                <a href="#">Delete</a>
-                <a href="#">View</a>
+                <a href="/users/edit/<?=$user->id?>">Edit</a>
+                <a href="/users/view/<?=$user->id?>">View</a>
+                <form action="/users/delete/<?php echo $user->id;?>" method="POST">
+                    <input type="submit" value="delete">
+                </form>
             </td>
         </tr>
     <?php endforeach;?>
     </tbody>
 </table>
 
-<a href="">New</a>
+<a href="/users/add">New</a>
